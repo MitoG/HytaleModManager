@@ -34,6 +34,7 @@ This mod for Hytale checks if any installed mod can be updated to a newer versio
 
 | option | required | default | description |
 | --- | --- | --- | --- |
+| `minutesBetweenChecks` | no | 30 | time between checks for updates |  
 | `notifyInLog` | no | false | writes a message in the server log |
 | `notifyInGame` | no | false | uses `/notify` to make users aware of a new update |
 | `notifyWithWebhooks` | no | false | calls the specified webhooks |
@@ -62,10 +63,11 @@ This mod for Hytale checks if any installed mod can be updated to a newer versio
 
 ```json
 {
-    "notifyInLog"       : true,
-    "notifyInGame"      : true,
-    "notifyWithWebhooks": true,
-    "mods"              : [
+    "minutesBetweenChecks": 30,
+    "notifyInLog"         : true,
+    "notifyInGame"        : true,
+    "notifyWithWebhooks"  : true,
+    "mods"                : [
         {
             "name"    : "MultipleHUD",
             "fileName": "MultipleHUD-1.0.4.jar",
@@ -77,7 +79,7 @@ This mod for Hytale checks if any installed mod can be updated to a newer versio
             "modUrl"  : "https://www.curseforge.com/hytale/mods/examplemod"
         }
     ],
-    "webhooks"          : [
+    "webhooks"            : [
         { "url": "https://discord.com/api/webhooks/123456789/abcdefghi" },
         {
             "type"       : "generic",
@@ -88,4 +90,5 @@ This mod for Hytale checks if any installed mod can be updated to a newer versio
         }
     ]
 }
+
 ```
